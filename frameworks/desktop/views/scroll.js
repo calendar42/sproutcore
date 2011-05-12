@@ -1052,10 +1052,12 @@ SC.ScrollView = SC.View.extend(SC.Border, {
       accelerationToEdge: 0.1,
       
       // how much percent of the other drag direction you must drag to start dragging that direction too.
-      scrollTolerance: { x: 15, y: 15 },
-      scaleTolerance: 5,
-      secondaryScrollTolerance: 30,
-      scrollLock: 500,
+     // scrollTolerance: { x: 15, y: 15 },
+     scrollTolerance: { x: 80, y: 99 },
+     scaleTolerance: 5,
+     // secondaryScrollTolerance: 30,
+     secondaryScrollTolerance: 80,
+     scrollLock: 500,
       
       decelerationRate: this.get("decelerationRate"),
 
@@ -1129,6 +1131,7 @@ SC.ScrollView = SC.View.extend(SC.Border, {
       // say we are scrolling
       isDragging = YES;
       touch.scrolling.x = YES;
+
       touch.scrollTolerance.y = touch.secondaryScrollTolerance;
       
       // reset position
