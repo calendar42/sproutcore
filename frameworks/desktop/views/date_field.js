@@ -55,6 +55,7 @@
   @since SproutCore 1.0
   @author Juan Pablo Goldfinger
 */
+/* REMOVEME:::: */
 SC.DateFieldView = SC.TextFieldView.extend(
 /** @scope SC.DateFieldView.prototype */
 {

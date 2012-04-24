@@ -47,7 +47,7 @@ SC.Benchmark = {
 
     @property {Boolean}
   */
-  verbose: NO,
+  verbose: YES,
 
   /**
     If false, benchmarking will be disabled.  You might want to disable this
@@ -403,75 +403,75 @@ SC.Benchmark = {
     Returns a view with the timeline chart. The view has a 'reload' method to
     refresh its data.
   */
-  getTimelineChartView: function() {
-    var view = SC.ScrollView.create({
-      contentView: SC.StaticContentView.extend({
-
-      }),
-
-      reload: function() {
-        var content = SC.Benchmark.getTimelineChartContent();
-        this.contentView.set('content', content.html);
-        this.contentView.adjust({
-          width: content.width,
-          height: content.height
-        });
-
-        this.chartContent = content;
-
-        SC.RunLoop.invokeLater(SC.Benchmark, function() {
-          this.contentView.notifyPropertyChange('frame');
-        });
-      }
-    });
-
-    view.reload();
-
-    return view;
-  },
+  // getTimelineChartView: function() {
+  //   var view = SC.ScrollView.create({
+  //     contentView: SC.StaticContentView.extend({
+  // 
+  //     }),
+  // 
+  //     reload: function() {
+  //       var content = SC.Benchmark.getTimelineChartContent();
+  //       this.contentView.set('content', content.html);
+  //       this.contentView.adjust({
+  //         width: content.width,
+  //         height: content.height
+  //       });
+  // 
+  //       this.chartContent = content;
+  // 
+  //       SC.RunLoop.invokeLater(SC.Benchmark, function() {
+  //         this.contentView.notifyPropertyChange('frame');
+  //       });
+  //     }
+  //   });
+  // 
+  //   view.reload();
+  // 
+  //   return view;
+  // },
 
   /**
     Generate a human readable benchmark chart. Pass in appName if you desire.
   */
-  timelineChart: function(appName) {
-    SC.RunLoop.begin();
-
-    var i=0;
-    // Hide the chart if there is an existing one.
-    this.hideChart();
-
-    // Compile the data.
-    var chartView = this.getTimelineChartView();
-    var chartLen = chartView.chartContent.pointsCaptured,
-        chartCapturedTime = chartView.chartContent.totalCapturedTime;
-
-    // Get the global start of the graph.
-
-    this._benchmarkChart = SC.Pane.create({
-      classNames: "sc-benchmark-pane".w(),
-      layout: { left: 20, right: 20, bottom: 20, top: 20 },
-      childViews: "title exit".w(),
-      exit: SC.ButtonView.extend({
-        layout: { right: 20, top: 20, width: 100, height: 30 },
-        title: "Hide Chart",
-        target: this,
-        action: "hideChart"
-      }),
-
-      title: SC.LabelView.extend({
-        classNames: 'sc-benchmark-title'.w(),
-        layout: { left: 20, top: 23, right: 200, height: 30 },
-        value: ((appName) ? appName : 'SproutCore Application') + (' - Total Captured Time: ' + chartCapturedTime +' ms - Points Captured: ' + chartLen),
-        fontWeight: 'bold'
-      })
-
-    }).append();
-
-    chartView.set('layout', { left: 20, top: 60, bottom: 20, right: 20 });
-    this._benchmarkChart.appendChild(chartView);
-
-    SC.RunLoop.end();
-  },
+  // timelineChart: function(appName) {
+  //   SC.RunLoop.begin();
+  // 
+  //   var i=0;
+  //   // Hide the chart if there is an existing one.
+  //   this.hideChart();
+  // 
+  //   // Compile the data.
+  //   var chartView = this.getTimelineChartView();
+  //   var chartLen = chartView.chartContent.pointsCaptured,
+  //       chartCapturedTime = chartView.chartContent.totalCapturedTime;
+  // 
+  //   // Get the global start of the graph.
+  // 
+  //   this._benchmarkChart = SC.Pane.create({
+  //     classNames: "sc-benchmark-pane".w(),
+  //     layout: { left: 20, right: 20, bottom: 20, top: 20 },
+  //     childViews: "title exit".w(),
+  //     exit: SC.ButtonView.extend({
+  //       layout: { right: 20, top: 20, width: 100, height: 30 },
+  //       title: "Hide Chart",
+  //       target: this,
+  //       action: "hideChart"
+  //     }),
+  // 
+  //     title: SC.LabelView.extend({
+  //       classNames: 'sc-benchmark-title'.w(),
+  //       layout: { left: 20, top: 23, right: 200, height: 30 },
+  //       value: ((appName) ? appName : 'SproutCore Application') + (' - Total Captured Time: ' + chartCapturedTime +' ms - Points Captured: ' + chartLen),
+  //       fontWeight: 'bold'
+  //     })
+  // 
+  //   }).append();
+  // 
+  //   chartView.set('layout', { left: 20, top: 60, bottom: 20, right: 20 });
+  //   this._benchmarkChart.appendChild(chartView);
+  // 
+  //   SC.RunLoop.end();
+  // },
 
   /*
     Hide chart.

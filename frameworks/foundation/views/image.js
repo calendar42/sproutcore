@@ -44,6 +44,7 @@ SC.BLANK_IMAGE.width = SC.BLANK_IMAGE.height = 1;
   @extends SC.InnerFrame
   @since SproutCore 1.0
 */
+/* REMOVEME:::: */
 SC.ImageView = SC.View.extend(SC.Control, SC.InnerFrame,
 /** @scope SC.ImageView.prototype */ {
 

@@ -18,6 +18,7 @@ SC.BEST_FIT_DOWN_ONLY = "fitBestDown";
   View's that render images will find this mixin particularly useful for fitting their images.
 
  */
+/* REMOVEME:::: */
 SC.InnerFrame = {
 
   /**

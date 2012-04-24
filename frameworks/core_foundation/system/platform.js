@@ -391,6 +391,13 @@ SC.platform = {
     SC.platform.supportsCSS3DTransforms = NO;
   }
 
+  // TODO: no hardware accelaration on chrome please c42
+  // if (SC.browser.chrome) {
+  //   SC.platform.supportsCSS3DTransforms = NO;
+  //   SC.platform.supportsCSSTransforms = NO;
+  //   // $('body').find('*').css('-webkit-transform', 'none');
+  // }
+
   // Unfortunately, this has to be manual, as I can't think of a good way to test it
   // webkit-only for now.
   if (SC.platform.supportsCSSTransforms && SC.platform.cssPrefix === "webkit") {

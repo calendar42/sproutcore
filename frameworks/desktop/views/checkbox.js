@@ -21,6 +21,7 @@
   @extends SC.FieldView
   @since SproutCore 1.0
 */
+/* REMOVEME:::: */
 SC.CheckboxView = SC.ButtonView.extend(SC.StaticLayout, SC.Button,
   /** @scope SC.CheckboxView.prototype */ {
 

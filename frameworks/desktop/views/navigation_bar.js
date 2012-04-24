@@ -15,6 +15,7 @@ sc_require("views/toolbar");
   @extends SC.ToolbarView
   @since SproutCore 1.0
 */
+/* REMOVEME:::: */
 SC.NavigationBarView = SC.ToolbarView.extend(SC.Gesturable, {
   gestures: ["swipeGesture"],
   swipeGesture: SC.SwipeGesture,

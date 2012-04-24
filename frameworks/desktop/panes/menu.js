@@ -60,6 +60,7 @@ require('views/menu_item');
   @since SproutCore 1.0
 */
 
+/* REMOVEME:::: */
 SC.MenuPane = SC.PickerPane.extend(
 /** @scope SC.MenuPane.prototype */ {
 

@@ -139,6 +139,7 @@ SC.Gesturable = {
     are not going to handle it.
   */
   touchStart: function(touch) {
+    console.info('GESTURABLE VIEW TOUCH START');
     this.gestureTouchStart(touch);
   },
   

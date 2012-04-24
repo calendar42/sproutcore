@@ -22,6 +22,7 @@
   @extends SC.Button
   @since SproutCore 1.0
 */
+/* REMOVEME:::: */
 SC.ButtonView = SC.View.extend(SC.Control, SC.Button,
 /** @scope SC.ButtonView.prototype */ {
 
